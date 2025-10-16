@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kyle Jackson | Mechanical Engineering Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+    header {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    header p {
+      font-size: 1rem;
+      color: #bbb;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1.5rem;
+    }
+    .card-content h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      color: #007bff;
+    }
+    .skills {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    footer {
+      background: #1a1a1a;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem;
+    }
+    footer a {
+      color: #0dcaf0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kyle Jackson</h1>
+    <p>Mechanical Engineering Portfolio | Brigham Young University - Idaho</p>
+  </header>
+
+  <section class="projects">
+    <div class="card">
+      <img src="https://i.imgur.com/6y5YtUu.jpg" alt="Cylinder Drag Force Analysis" />
+      <div class="card-content">
+        <h3>Cylinder Drag Force Analysis</h3>
+        <p>Calculated total drag on a cylinder by combining real pressure data with a custom skin friction model. Used numerical integration to separate pressure and friction drag for realistic flow simulation.</p>
+        <p class="skills"><strong>Skills:</strong> Fluid dynamics, numerical integration, MATLAB, data visualization</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/RB2fW9X.jpg" alt="Automated Card Dispenser" />
+      <div class="card-content">
+        <h3>Automated Card Dispenser</h3>
+        <p>Designed and built an affordable automated card dispenser integrating sensors, stepper motors, and an Arduino controller. Developed the code for motor and sensor control to create a fully functional prototype.</p>
+        <p class="skills"><strong>Skills:</strong> Arduino, stepper motors, sensor integration, mechatronics, circuit design</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/jOtZJPS.jpg" alt="Plasma Cutter Design Project" />
+      <div class="card-content">
+        <h3>Plasma Cutter Design Project</h3>
+        <p>Modeled a plasma-cut sign in SolidWorks and fabricated it using a CNC plasma cutter. The final product was powder coated in a reflective 'City Lights' color, showing precision in design-to-manufacture workflow.</p>
+        <p class="skills"><strong>Skills:</strong> SolidWorks, manufacturing, CNC plasma cutting, powder coating</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact: <a href="mailto:kylejacksonm@gmail.com">kylejacksonm@gmail.com</a> | <a href="https://linkedin.com/in/kyle-jackson-001" target="_blank">LinkedIn</a></p>
+  </footer>
+</body>
+</html>
