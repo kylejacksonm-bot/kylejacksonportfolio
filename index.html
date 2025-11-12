@@ -12,20 +12,68 @@
       background-color: #f8f9fa;
       color: #212529;
     }
+
+    /* --- HEADER STYLES --- */
     header {
       background-color: #1a1a1a;
       color: #fff;
-      padding: 2rem;
-      text-align: center;
+      padding: 2rem 1rem;
     }
-    header h1 {
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .profile-left {
+      flex: 0 0 auto;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 8px rgba(0,0,0,0.25);
+    }
+
+    .contact-right {
+      text-align: right;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .contact-right a {
+      color: #0dcaf0;
+      text-decoration: none;
+    }
+
+    .contact-right a:hover {
+      text-decoration: underline;
+    }
+
+    .intro-text {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .intro-text h1 {
       margin: 0;
       font-size: 2.2rem;
     }
-    header p {
+
+    .intro-text p {
       font-size: 1rem;
       color: #bbb;
+      margin-top: 5px;
     }
+
+    /* --- PROJECT GRID --- */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -34,6 +82,7 @@
       max-width: 1200px;
       margin: auto;
     }
+
     .card {
       background: #fff;
       border-radius: 10px;
@@ -41,26 +90,32 @@
       overflow: hidden;
       transition: transform 0.2s ease;
     }
+
     .card:hover {
       transform: translateY(-5px);
     }
+
     iframe {
       width: 100%;
       height: 300px;
       border: none;
     }
+
     .card-content {
       padding: 1.5rem;
     }
+
     .card-content h3 {
       margin-top: 0;
       font-size: 1.3rem;
       color: #007bff;
     }
+
     .skills {
       font-size: 0.9rem;
       color: #555;
     }
+
     .view-btn {
       display: inline-block;
       margin-top: 10px;
@@ -72,26 +127,64 @@
       font-weight: 600;
       transition: background 0.3s ease;
     }
+
     .view-btn:hover {
       background-color: #0056b3;
     }
+
+    /* --- FOOTER --- */
     footer {
       background: #1a1a1a;
       color: #ccc;
       text-align: center;
       padding: 2rem;
     }
+
     footer a {
       color: #0dcaf0;
       text-decoration: none;
       margin: 0 10px;
     }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- MOBILE --- */
+    @media (max-width: 700px) {
+      .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .contact-right {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .intro-text {
+        margin-top: 10px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Kyle Jackson</h1>
-    <p>Mechanical Engineering Portfolio | Brigham Young University - Idaho</p>
+    <div class="header-container">
+      <div class="profile-left">
+        <img src="251016_CareerFairHeadshots_277.JPEG" alt="Kyle Jackson" class="profile-pic">
+      </div>
+      <div class="contact-right">
+        <p><strong>Email:</strong> <a href="mailto:kylejacksonm@gmail.com">kylejacksonm@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kyle-jackson-001/" target="_blank">linkedin.com/in/kyle-jackson-001</a></p>
+      </div>
+    </div>
+
+    <div class="intro-text">
+      <h1>Kyle Jackson</h1>
+      <p>Mechanical Engineering Portfolio | Brigham Young University - Idaho</p>
+    </div>
   </header>
 
   <section class="projects">
@@ -136,3 +229,4 @@
   </footer>
 </body>
 </html>
+
