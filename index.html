@@ -39,23 +39,15 @@
       justify-content: center;
     }
 
-    /* --- HIGH-QUALITY IMAGE SETTINGS --- */
     .profile-pic {
-      width: 220px;
-      height: 220px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       image-rendering: -webkit-optimize-contrast; /* Sharper in Chrome/Safari */
-      image-rendering: crisp-edges; /* Sharper on Firefox/Edge */
-      transform: translateZ(0); /* GPU acceleration for sharper edges */
-      filter: contrast(105%) brightness(105%) saturate(110%); /* Boost clarity */
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .profile-pic:hover {
-      transform: scale(1.03);
-      filter: contrast(110%) brightness(108%) saturate(115%);
+      image-rendering: crisp-edges;               /* Sharper on Firefox/Edge */
+      transform: translateZ(0);                   /* Prevent blurring on some GPUs */
     }
 
     .contact-right {
@@ -193,9 +185,8 @@
     /* --- RETINA / HIGH DPI --- */
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
       .profile-pic {
-        width: 240px;
-        height: 240px;
-        filter: contrast(110%) brightness(107%) saturate(115%);
+        width: 220px;
+        height: 220px;
       }
     }
   </style>
@@ -204,7 +195,7 @@
   <header>
     <div class="header-container">
       <div class="profile-left">
-        <img src="251016_CareerFairHeadshots_277.JPEG" alt="Kyle Jackson" class="profile-pic">
+        <img src="251016_CareerFairHeadshots_277.jpg" alt="Kyle Jackson" class="profile-pic">
       </div>
       <div class="contact-right">
         <p><strong>Email:</strong> <a href="mailto:kylejacksonm@gmail.com">kylejacksonm@gmail.com</a></p>
