@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kyle Jackson | Mechanical Engineering Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Times New Roman', serif;
       margin: 0;
-      background-color: #f8f9fa;
+      background-color: #e9ecef;
       color: #212529;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -36,18 +35,16 @@
       flex: 0 0 auto;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      margin-left: -30px;
     }
 
     .profile-pic {
-      width: 200px;
-      height: 200px;
+      width: 240px;
+      height: 240px;
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      image-rendering: -webkit-optimize-contrast; /* Sharper in Chrome/Safari */
-      image-rendering: crisp-edges;               /* Sharper on Firefox/Edge */
-      transform: translateZ(0);                   /* Prevent blurring on some GPUs */
     }
 
     .contact-right {
@@ -141,22 +138,11 @@
       background-color: #0056b3;
     }
 
-    /* --- FOOTER --- */
     footer {
       background: #1a1a1a;
       color: #ccc;
       text-align: center;
       padding: 2rem;
-    }
-
-    footer a {
-      color: #0dcaf0;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
     }
 
     /* --- MOBILE --- */
@@ -179,14 +165,7 @@
       .profile-pic {
         width: 180px;
         height: 180px;
-      }
-    }
-
-    /* --- RETINA / HIGH DPI --- */
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .profile-pic {
-        width: 220px;
-        height: 220px;
+        margin-left: 0;
       }
     }
   </style>
@@ -210,43 +189,75 @@
   </header>
 
   <section class="projects">
-    <!-- Project 1 -->
+    <!-- Planetary Gear System -->
     <div class="card">
-      <iframe src="https://kylejacksonm-bot.github.io/kylejacksonportfolio/PortfolioProjectME342.pdf#view=FitH" title="Cylinder Drag Force Analysis"></iframe>
+      <iframe src="Planetary%20Gear%20System%20-%20Website.pdf#view=FitH"></iframe>
       <div class="card-content">
-        <h3>Cylinder Drag Force Analysis</h3>
-        <p>Calculated total drag on a cylinder by combining real pressure data with a custom skin friction model. Used numerical integration to separate pressure and friction drag for realistic flow simulation.</p>
-        <p class="skills"><strong>Skills:</strong> Fluid dynamics, numerical integration, MATLAB, data visualization</p>
-        <a class="view-btn" href="https://github.com/kylejacksonm-bot/kylejacksonportfolio/blob/main/PortfolioProjectME342.pdf?raw=true" target="_blank">Open Full PDF</a>
+        <h3>Planetary Gear System</h3>
+        <p>Designed and fabricated a functional planetary gear system using CNC-machined HDPE gears and laser-engraved acrylic supports, complete with precision-fit bearings and keyways.</p>
+        <p class="skills"><strong>Skills:</strong> CNC machining, SolidWorks modeling, tolerance analysis, laser engraving</p>
+        <a class="view-btn" href="Planetary%20Gear%20System%20-%20Website.pdf" target="_blank">Open Full PDF</a>
       </div>
     </div>
 
-    <!-- Project 2 -->
+    <!-- Work Shelf -->
     <div class="card">
-      <iframe src="https://kylejacksonm-bot.github.io/kylejacksonportfolio/PortfolioTemplate-%20Card%20Reader.pdf#view=FitH" title="Automated Card Dispenser"></iframe>
+      <iframe src="Work%20Shelf%20-%20Website.pdf#view=FitH"></iframe>
+      <div class="card-content">
+        <h3>Garage Tool Organizer Shelf</h3>
+        <p>Created a laser-cut acrylic organizer to store power tools and accessories with a clean, functional design and strong press-fit joints.</p>
+        <p class="skills"><strong>Skills:</strong> SolidWorks design, laser cutting, assembly optimization</p>
+        <a class="view-btn" href="Work%20Shelf%20-%20Website.pdf" target="_blank">Open Full PDF</a>
+      </div>
+    </div>
+
+    <!-- Plant Stand -->
+    <div class="card">
+      <iframe src="Plant%20Stand%20-%20Website.pdf#view=FitH"></iframe>
+      <div class="card-content">
+        <h3>Laser-Cut Plant Stand</h3>
+        <p>Designed and fabricated a minimalist plant stand from black acrylic with precise interlocking parts for tool-free assembly and a sleek finish.</p>
+        <p class="skills"><strong>Skills:</strong> Laser cutting, SolidWorks modeling, material selection</p>
+        <a class="view-btn" href="Plant%20Stand%20-%20Website.pdf" target="_blank">Open Full PDF</a>
+      </div>
+    </div>
+
+    <!-- Automated Card Dispenser -->
+    <div class="card">
+      <iframe src="Card%20Reader%20-%20Website.pdf#view=FitH"></iframe>
       <div class="card-content">
         <h3>Automated Card Dispenser</h3>
-        <p>Designed and built an affordable automated card dispenser integrating sensors, stepper motors, and an Arduino controller. Developed the code for motor and sensor control to create a fully functional prototype.</p>
-        <p class="skills"><strong>Skills:</strong> Arduino, stepper motors, sensor integration, mechatronics, circuit design</p>
-        <a class="view-btn" href="https://github.com/kylejacksonm-bot/kylejacksonportfolio/blob/main/PortfolioTemplate-%20Card%20Reader.pdf?raw=true" target="_blank">Open Full PDF</a>
+        <p>Developed an automated card dispensing system with integrated motors and sensors using Arduino for seamless operation.</p>
+        <p class="skills"><strong>Skills:</strong> Arduino programming, stepper motor control, sensor integration</p>
+        <a class="view-btn" href="Card%20Reader%20-%20Website.pdf" target="_blank">Open Full PDF</a>
       </div>
     </div>
 
-    <!-- Project 3 -->
+    <!-- Fish (ME280 Portfolio) -->
     <div class="card">
-      <iframe src="https://kylejacksonm-bot.github.io/kylejacksonportfolio/ME280%20Portfolio.pdf#view=FitH" title="Plasma Cutter Design Project"></iframe>
+      <iframe src="ME280%20Portfolio.pdf#view=FitH"></iframe>
       <div class="card-content">
-        <h3>Plasma Cutter Design Project</h3>
-        <p>Modeled a plasma-cut sign in SolidWorks and fabricated it using a CNC plasma cutter. The final product was powder coated in a reflective 'City Lights' color, showing precision in design-to-manufacture workflow.</p>
-        <p class="skills"><strong>Skills:</strong> SolidWorks, manufacturing, CNC plasma cutting, powder coating</p>
-        <a class="view-btn" href="https://github.com/kylejacksonm-bot/kylejacksonportfolio/blob/main/ME280%20Portfolio.pdf?raw=true" target="_blank">Open Full PDF</a>
+        <h3>Plasma-Cut Fish Sign</h3>
+        <p>Modeled and fabricated a custom plasma-cut fish sign, applying CNC precision and powder coating for a professional finish.</p>
+        <p class="skills"><strong>Skills:</strong> CNC plasma cutting, SolidWorks, manufacturing workflow</p>
+        <a class="view-btn" href="ME280%20Portfolio.pdf" target="_blank">Open Full PDF</a>
+      </div>
+    </div>
+
+    <!-- Drag Flow Analysis -->
+    <div class="card">
+      <iframe src="Drag%20Analysis%20-%20Website.pdf#view=FitH"></iframe>
+      <div class="card-content">
+        <h3>Drag Flow Analysis</h3>
+        <p>Performed a fluid dynamics analysis to calculate total drag using numerical methods and MATLAB visualization tools.</p>
+        <p class="skills"><strong>Skills:</strong> Fluid mechanics, numerical modeling, MATLAB</p>
+        <a class="view-btn" href="Drag%20Analysis%20-%20Website.pdf" target="_blank">Open Full PDF</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>Contact: <a href="mailto:kylejacksonm@gmail.com">kylejacksonm@gmail.com</a> | 
-      <a href="https://linkedin.com/in/kyle-jackson-001" target="_blank">LinkedIn</a></p>
+    <p>© 2025 Kyle Jackson | Mechanical Engineering Portfolio</p>
   </footer>
 </body>
 </html>
