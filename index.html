@@ -10,11 +10,8 @@
       margin: 0;
       background-color: #e9ecef;
       color: #212529;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* --- HEADER STYLES --- */
     header {
       background-color: #1a1a1a;
       color: #fff;
@@ -31,11 +28,11 @@
       gap: 20px;
     }
 
+    /* LIGHTER BACKGROUND BEHIND IMAGE */
     .profile-left {
-      flex: 0 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
+      background-color: #f1f3f5;
+      padding: 12px;
+      border-radius: 50%;
       margin-left: -30px;
     }
 
@@ -45,6 +42,7 @@
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      display: block;
     }
 
     .contact-right {
@@ -58,10 +56,6 @@
       text-decoration: none;
     }
 
-    .contact-right a:hover {
-      text-decoration: underline;
-    }
-
     .intro-text {
       text-align: center;
       margin-top: 20px;
@@ -70,16 +64,13 @@
     .intro-text h1 {
       margin: 0;
       font-size: 2.4rem;
-      font-weight: 600;
     }
 
     .intro-text p {
       font-size: 1rem;
       color: #bbb;
-      margin-top: 5px;
     }
 
-    /* --- PROJECT GRID --- */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -94,11 +85,6 @@
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
     }
 
     iframe {
@@ -131,11 +117,6 @@
       border-radius: 5px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .view-btn:hover {
-      background-color: #0056b3;
     }
 
     footer {
@@ -144,120 +125,110 @@
       text-align: center;
       padding: 2rem;
     }
-
-    /* --- MOBILE --- */
-    @media (max-width: 700px) {
-      .header-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .contact-right {
-        text-align: center;
-        margin-top: 10px;
-      }
-
-      .intro-text {
-        margin-top: 10px;
-      }
-
-      .profile-pic {
-        width: 180px;
-        height: 180px;
-        margin-left: 0;
-      }
-    }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="header-container">
-      <div class="profile-left">
-        <img src="251016_CareerFairHeadshots_277.jpg" alt="Kyle Jackson" class="profile-pic">
-      </div>
-      <div class="contact-right">
-        <p><strong>Email:</strong> <a href="mailto:kylejacksonm@gmail.com">kylejacksonm@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kyle-jackson-001/" target="_blank">linkedin.com/in/kyle-jackson-001</a></p>
-      </div>
+<header>
+  <div class="header-container">
+    <div class="profile-left">
+      <img src="251016_CareerFairHeadshots_277.jpg" alt="Kyle Jackson" class="profile-pic">
     </div>
-
-    <div class="intro-text">
-      <h1>Kyle Jackson</h1>
-      <p>Mechanical Engineering Portfolio | Brigham Young University - Idaho</p>
+    <div class="contact-right">
+      <p><strong>Email:</strong> <a href="mailto:kylejacksonm@gmail.com">kylejacksonm@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kyle-jackson-001/" target="_blank">linkedin.com/in/kyle-jackson-001</a></p>
     </div>
-  </header>
+  </div>
 
-  <section class="projects">
-    <!-- Planetary Gear System -->
-    <div class="card">
-      <iframe src="Planetary%20Gear%20System%20-%20Website.pdf#view=FitH"></iframe>
-      <div class="card-content">
-        <h3>Planetary Gear System</h3>
-        <p>Designed and fabricated a functional planetary gear system using CNC-machined HDPE gears and laser-engraved acrylic supports, complete with precision-fit bearings and keyways.</p>
-        <p class="skills"><strong>Skills:</strong> CNC machining, SolidWorks modeling, tolerance analysis, laser engraving</p>
-        <a class="view-btn" href="Planetary%20Gear%20System%20-%20Website.pdf" target="_blank">Open Full PDF</a>
-      </div>
+  <div class="intro-text">
+    <h1>Kyle Jackson</h1>
+    <p>Mechanical Engineering Portfolio | Brigham Young University - Idaho</p>
+  </div>
+</header>
+
+<section class="projects">
+
+  <!-- FLIGHT SIMULATOR (FIRST) -->
+  <div class="card">
+    <iframe src="FlightSimulator_PDF.pdf#view=FitH"></iframe>
+    <div class="card-content">
+      <h3>MATLAB Flight Simulator</h3>
+      <p>Designed and implemented a real-time 6-DOF flight simulator using MATLAB, quaternion-based rotations, numerical integration, and Arduino joystick control.</p>
+      <p class="skills"><strong>Skills:</strong> MATLAB, numerical methods, dynamics, quaternions, Arduino integration</p>
+      <a class="view-btn" href="FlightSimulator_PDF.pdf" target="_blank">Open Full PDF</a>
     </div>
+  </div>
 
-    <!-- Work Shelf -->
-    <div class="card">
-      <iframe src="Work%20Shelf%20-%20Website.pdf#view=FitH"></iframe>
-      <div class="card-content">
-        <h3>Garage Tool Organizer Shelf</h3>
-        <p>Created a laser-cut acrylic organizer to store power tools and accessories with a clean, functional design and strong press-fit joints.</p>
-        <p class="skills"><strong>Skills:</strong> SolidWorks design, laser cutting, assembly optimization</p>
-        <a class="view-btn" href="Work%20Shelf%20-%20Website.pdf" target="_blank">Open Full PDF</a>
-      </div>
+  <!-- PLANETARY GEAR -->
+  <div class="card">
+    <iframe src="Planetary%20Gear%20System%20-%20Website.pdf#view=FitH"></iframe>
+    <div class="card-content">
+      <h3>Planetary Gear System</h3>
+      <p>Designed and fabricated a functional planetary gear system using CNC-machined HDPE gears and laser-engraved acrylic supports.</p>
+      <p class="skills"><strong>Skills:</strong> CNC machining, SolidWorks, tolerance analysis</p>
+      <a class="view-btn" href="Planetary%20Gear%20System%20-%20Website.pdf" target="_blank">Open Full PDF</a>
     </div>
+  </div>
 
-    <!-- Plant Stand -->
-    <div class="card">
-      <iframe src="Plant%20Stand%20-%20Website.pdf#view=FitH"></iframe>
-      <div class="card-content">
-        <h3>Laser-Cut Plant Stand</h3>
-        <p>Designed and fabricated a minimalist plant stand from black acrylic with precise interlocking parts for tool-free assembly and a sleek finish.</p>
-        <p class="skills"><strong>Skills:</strong> Laser cutting, SolidWorks modeling, material selection</p>
-        <a class="view-btn" href="Plant%20Stand%20-%20Website.pdf" target="_blank">Open Full PDF</a>
-      </div>
+  <!-- WORK SHELF -->
+  <div class="card">
+    <iframe src="Work%20Shelf%20-%20Website.pdf#view=FitH"></iframe>
+    <div class="card-content">
+      <h3>Garage Tool Organizer Shelf</h3>
+      <p>Laser-cut acrylic organizer designed for efficient tool storage with clean press-fit joints.</p>
+      <p class="skills"><strong>Skills:</strong> SolidWorks, laser cutting</p>
+      <a class="view-btn" href="Work%20Shelf%20-%20Website.pdf" target="_blank">Open Full PDF</a>
     </div>
+  </div>
 
-    <!-- Automated Card Dispenser -->
-    <div class="card">
-      <iframe src="Card%20Reader%20-%20Website.pdf#view=FitH"></iframe>
-      <div class="card-content">
-        <h3>Automated Card Dispenser</h3>
-        <p>Developed an automated card dispensing system with integrated motors and sensors using Arduino for seamless operation.</p>
-        <p class="skills"><strong>Skills:</strong> Arduino programming, stepper motor control, sensor integration</p>
-        <a class="view-btn" href="Card%20Reader%20-%20Website.pdf" target="_blank">Open Full PDF</a>
-      </div>
+  <!-- PLANT STAND -->
+  <div class="card">
+    <iframe src="Plant%20Stand%20-%20Website.pdf#view=FitH"></iframe>
+    <div class="card-content">
+      <h3>Laser-Cut Plant Stand</h3>
+      <p>Minimalist acrylic plant stand with interlocking geometry and tool-free assembly.</p>
+      <p class="skills"><strong>Skills:</strong> Laser cutting, SolidWorks</p>
+      <a class="view-btn" href="Plant%20Stand%20-%20Website.pdf" target="_blank">Open Full PDF</a>
     </div>
+  </div>
 
-    <!-- Fish (ME280 Portfolio) -->
-    <div class="card">
-      <iframe src="ME280%20Portfolio.pdf#view=FitH"></iframe>
-      <div class="card-content">
-        <h3>Plasma-Cut Fish Sign</h3>
-        <p>Modeled and fabricated a custom plasma-cut fish sign, applying CNC precision and powder coating for a professional finish.</p>
-        <p class="skills"><strong>Skills:</strong> CNC plasma cutting, SolidWorks, manufacturing workflow</p>
-        <a class="view-btn" href="ME280%20Portfolio.pdf" target="_blank">Open Full PDF</a>
-      </div>
+  <!-- CARD DISPENSER -->
+  <div class="card">
+    <iframe src="Card%20Reader%20-%20Website.pdf#view=FitH"></iframe>
+    <div class="card-content">
+      <h3>Automated Card Dispenser</h3>
+      <p>Automated card dispensing system using Arduino-controlled motors and sensors.</p>
+      <p class="skills"><strong>Skills:</strong> Arduino, motors, sensors</p>
+      <a class="view-btn" href="Card%20Reader%20-%20Website.pdf" target="_blank">Open Full PDF</a>
     </div>
+  </div>
 
-    <!-- Drag Flow Analysis -->
-    <div class="card">
-      <iframe src="Drag%20Analysis%20-%20Website.pdf#view=FitH"></iframe>
-      <div class="card-content">
-        <h3>Drag Flow Analysis</h3>
-        <p>Performed a fluid dynamics analysis to calculate total drag using numerical methods and MATLAB visualization tools.</p>
-        <p class="skills"><strong>Skills:</strong> Fluid mechanics, numerical modeling, MATLAB</p>
-        <a class="view-btn" href="Drag%20Analysis%20-%20Website.pdf" target="_blank">Open Full PDF</a>
-      </div>
+  <!-- UPDATED FISH PROJECT -->
+  <div class="card">
+    <iframe src="Fish_Website.pdf#view=FitH"></iframe>
+    <div class="card-content">
+      <h3>Plasma-Cut Fish Sign</h3>
+      <p>Custom plasma-cut fish sign showcasing CNC fabrication and finishing processes.</p>
+      <p class="skills"><strong>Skills:</strong> CNC plasma cutting, SolidWorks</p>
+      <a class="view-btn" href="Fish_Website.pdf" target="_blank">Open Full PDF</a>
     </div>
-  </section>
+  </div>
 
-  <footer>
-    <p>© 2025 Kyle Jackson | Mechanical Engineering Portfolio</p>
-  </footer>
+  <!-- DRAG ANALYSIS -->
+  <div class="card">
+    <iframe src="Drag%20Analysis%20-%20Website.pdf#view=FitH"></iframe>
+    <div class="card-content">
+      <h3>Drag Flow Analysis</h3>
+      <p>Numerical drag analysis using MATLAB and fluid mechanics principles.</p>
+      <p class="skills"><strong>Skills:</strong> Fluid mechanics, MATLAB</p>
+      <a class="view-btn" href="Drag%20Analysis%20-%20Website.pdf" target="_blank">Open Full PDF</a>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2025 Kyle Jackson | Mechanical Engineering Portfolio</p>
+</footer>
 </body>
 </html>
