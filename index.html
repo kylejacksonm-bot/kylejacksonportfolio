@@ -8,7 +8,6 @@
   <style>
     :root {
       --dark: #1a1a1a;
-      --light: #f1f3f5;
       --text: #212529;
       --muted: #6c757d;
     }
@@ -75,7 +74,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background-color: rgba(255,255,255,0.9);
+      background-color: rgba(255,255,255,0.92);
     }
 
     .home-text h1 {
@@ -95,7 +94,22 @@
       margin-top: 1.5rem;
       font-size: 1.1rem;
       line-height: 1.7;
-      max-width: 520px;
+      max-width: 540px;
+    }
+
+    .cta {
+      margin-top: 2rem;
+    }
+
+    .cta button {
+      padding: 12px 26px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      background-color: var(--dark);
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
     }
 
     .contact {
@@ -112,22 +126,22 @@
     .projects {
       display: none;
       padding: 3rem;
-      max-width: 1200px;
+      max-width: 1300px;
       margin: auto;
     }
 
     .project-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
 
     .project-card {
       background: white;
-      padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       cursor: pointer;
+      overflow: hidden;
       transition: transform 0.2s;
     }
 
@@ -135,13 +149,24 @@
       transform: translateY(-4px);
     }
 
-    .project-card h3 {
+    .project-preview iframe {
+      width: 100%;
+      height: 220px;
+      border: none;
+      pointer-events: none;
+    }
+
+    .project-info {
+      padding: 1.25rem;
+    }
+
+    .project-info h3 {
       font-size: 1.25rem;
       font-weight: 800;
     }
 
-    .project-card p {
-      margin-top: 0.5rem;
+    .project-info p {
+      margin-top: 0.4rem;
       font-size: 0.95rem;
       color: var(--muted);
     }
@@ -193,9 +218,15 @@
     <h2>Engineering Portfolio</h2>
 
     <p>
-      Mechanical Engineering student with hands-on experience in CAD design,
-      numerical analysis, and prototyping.
+      Hi, thanks for checking out my webpage. My name is Kyle Jackson, and ever since I
+      was a kid I have been interested in learning how things work. I am a Mechanical Engineering
+      student at BYU Idaho in Rexburg, and I enjoy sports, fly fishing, CAD design,
+      prototyping, and solving real world engineering problems.
     </p>
+
+    <div class="cta">
+      <button onclick="showProjects()">Check out my projects</button>
+    </div>
 
     <div class="contact">
       <p>Email: <a href="mailto:kylejacksonm@gmail.com">kylejacksonm@gmail.com</a></p>
@@ -210,38 +241,73 @@
   <div class="project-list">
 
     <div class="project-card" onclick="openPDF('FlightSimulator_PDF.pdf')">
-      <h3>MATLAB Flight Simulator</h3>
-      <p>Real-time 6-DOF simulation with Arduino joystick control.</p>
+      <div class="project-preview">
+        <iframe src="FlightSimulator_PDF.pdf#page=1"></iframe>
+      </div>
+      <div class="project-info">
+        <h3>MATLAB Flight Simulator</h3>
+        <p>Real time 6 DOF aircraft simulation with Arduino joystick control.</p>
+      </div>
     </div>
 
     <div class="project-card" onclick="openPDF('Planetary Gear System - Website.pdf')">
-      <h3>Planetary Gear System</h3>
-      <p>CNC-machined functional planetary geartrain.</p>
+      <div class="project-preview">
+        <iframe src="Planetary Gear System - Website.pdf#page=1"></iframe>
+      </div>
+      <div class="project-info">
+        <h3>Planetary Gear System</h3>
+        <p>CNC machined functional planetary geartrain.</p>
+      </div>
     </div>
 
     <div class="project-card" onclick="openPDF('Work Shelf - Website.pdf')">
-      <h3>Garage Tool Organizer Shelf</h3>
-      <p>Laser-cut acrylic storage system.</p>
+      <div class="project-preview">
+        <iframe src="Work Shelf - Website.pdf#page=1"></iframe>
+      </div>
+      <div class="project-info">
+        <h3>Garage Tool Organizer Shelf</h3>
+        <p>Laser cut acrylic storage system.</p>
+      </div>
     </div>
 
     <div class="project-card" onclick="openPDF('Plant Stand - Website.pdf')">
-      <h3>Laser-Cut Plant Stand</h3>
-      <p>Interlocking acrylic structure.</p>
+      <div class="project-preview">
+        <iframe src="Plant Stand - Website.pdf#page=1"></iframe>
+      </div>
+      <div class="project-info">
+        <h3>Laser Cut Plant Stand</h3>
+        <p>Interlocking acrylic structure.</p>
+      </div>
     </div>
 
     <div class="project-card" onclick="openPDF('Card Reader - Website.pdf')">
-      <h3>Automated Card Dispenser</h3>
-      <p>Arduino-controlled motors and sensors.</p>
+      <div class="project-preview">
+        <iframe src="Card Reader - Website.pdf#page=1"></iframe>
+      </div>
+      <div class="project-info">
+        <h3>Automated Card Dispenser</h3>
+        <p>Arduino controlled motors and sensors.</p>
+      </div>
     </div>
 
     <div class="project-card" onclick="openPDF('Fish_Website.pdf')">
-      <h3>Plasma-Cut Fish Sign</h3>
-      <p>CNC plasma cutting and finishing.</p>
+      <div class="project-preview">
+        <iframe src="Fish_Website.pdf#page=1"></iframe>
+      </div>
+      <div class="project-info">
+        <h3>Plasma Cut Fish Sign</h3>
+        <p>CNC plasma cutting and finishing.</p>
+      </div>
     </div>
 
     <div class="project-card" onclick="openPDF('Drag Analysis - Website.pdf')">
-      <h3>Drag Flow Analysis</h3>
-      <p>Numerical fluid dynamics analysis in MATLAB.</p>
+      <div class="project-preview">
+        <iframe src="Drag Analysis - Website.pdf#page=1"></iframe>
+      </div>
+      <div class="project-info">
+        <h3>Drag Flow Analysis</h3>
+        <p>Numerical fluid dynamics analysis in MATLAB.</p>
+      </div>
     </div>
 
   </div>
