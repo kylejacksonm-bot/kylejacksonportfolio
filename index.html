@@ -7,10 +7,10 @@
 
   <style>
     :root {
-      --bg-dark: #1a1a1a;
-      --bg-light: #f1f3f5;
-      --text-main: #212529;
-      --text-muted: #6c757d;
+      --dark: #1a1a1a;
+      --light: #f1f3f5;
+      --text: #212529;
+      --muted: #6c757d;
     }
 
     * {
@@ -22,12 +22,12 @@
     body {
       font-family: "Times New Roman", serif;
       background-color: #e9ecef;
-      color: var(--text-main);
+      color: var(--text);
     }
 
     /* ---------- NAV ---------- */
     nav {
-      background-color: var(--bg-dark);
+      background-color: var(--dark);
       padding: 1rem 2rem;
       display: flex;
       justify-content: flex-end;
@@ -37,31 +37,37 @@
     nav button {
       background: none;
       border: none;
-      color: #fff;
+      color: white;
       font-size: 1rem;
       font-weight: 700;
       cursor: pointer;
     }
 
-    /* ---------- HOME SECTION ---------- */
+    /* ---------- HOME ---------- */
     .home {
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: calc(100vh - 64px);
+      background-image: url("white-technology-background_23-2148390327.avif");
+      background-size: cover;
+      background-position: center;
     }
 
     .home-image {
-      background-color: var(--bg-light);
       display: flex;
       align-items: center;
       justify-content: center;
+      backdrop-filter: blur(2px);
     }
 
     .home-image img {
-      width: 80%;
+      width: 55%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      border-radius: 6px;
+      background-color: white;
+      padding: 6px;
     }
 
     .home-text {
@@ -69,6 +75,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background-color: rgba(255,255,255,0.9);
     }
 
     .home-text h1 {
@@ -81,14 +88,14 @@
       font-size: 1.6rem;
       font-weight: 700;
       margin-top: 0.5rem;
-      color: var(--text-muted);
+      color: var(--muted);
     }
 
     .home-text p {
       margin-top: 1.5rem;
       font-size: 1.1rem;
       line-height: 1.7;
-      max-width: 500px;
+      max-width: 520px;
     }
 
     .contact {
@@ -116,7 +123,7 @@
     }
 
     .project-card {
-      background: #fff;
+      background: white;
       padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -129,14 +136,14 @@
     }
 
     .project-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 800;
     }
 
     .project-card p {
       margin-top: 0.5rem;
       font-size: 0.95rem;
-      color: var(--text-muted);
+      color: var(--muted);
     }
 
     /* ---------- PDF VIEWER ---------- */
@@ -149,10 +156,9 @@
       width: 100%;
       height: 90vh;
       border: none;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
     }
 
-    /* ---------- RESPONSIVE ---------- */
     @media (max-width: 900px) {
       .home {
         grid-template-columns: 1fr;
@@ -160,6 +166,10 @@
 
       .home-text {
         padding: 2rem;
+      }
+
+      .home-image img {
+        width: 65%;
       }
     }
   </style>
@@ -175,7 +185,7 @@
 <!-- HOME -->
 <section class="home" id="home">
   <div class="home-image">
-    <img src="images/headshot.jpg" alt="Kyle Jackson">
+    <img src="251016_CareerFairHeadshots_277.jpg" alt="Kyle Jackson">
   </div>
 
   <div class="home-text">
@@ -183,9 +193,8 @@
     <h2>Engineering Portfolio</h2>
 
     <p>
-      Mechanical Engineering student focused on design, dynamics, numerical analysis,
-      and real-world problem solving. Experience across CAD, simulation, fabrication,
-      and embedded systems.
+      Mechanical Engineering student with hands-on experience in CAD design,
+      numerical analysis, and prototyping.
     </p>
 
     <div class="contact">
@@ -200,17 +209,40 @@
 <section class="projects" id="projects">
   <div class="project-list">
 
-    <div class="project-card" onclick="openPDF('pdfs/FlightSimulator_PDF.pdf')">
+    <div class="project-card" onclick="openPDF('FlightSimulator_PDF.pdf')">
       <h3>MATLAB Flight Simulator</h3>
-      <p>Real-time 6-DOF aircraft simulation with Arduino joystick control.</p>
+      <p>Real-time 6-DOF simulation with Arduino joystick control.</p>
     </div>
 
-    <div class="project-card" onclick="openPDF('pdfs/PlanetaryGear.pdf')">
+    <div class="project-card" onclick="openPDF('Planetary Gear System - Website.pdf')">
       <h3>Planetary Gear System</h3>
-      <p>CNC-machined functional geartrain with tolerance analysis.</p>
+      <p>CNC-machined functional planetary geartrain.</p>
     </div>
 
-    <!-- Add more projects here -->
+    <div class="project-card" onclick="openPDF('Work Shelf - Website.pdf')">
+      <h3>Garage Tool Organizer Shelf</h3>
+      <p>Laser-cut acrylic storage system.</p>
+    </div>
+
+    <div class="project-card" onclick="openPDF('Plant Stand - Website.pdf')">
+      <h3>Laser-Cut Plant Stand</h3>
+      <p>Interlocking acrylic structure.</p>
+    </div>
+
+    <div class="project-card" onclick="openPDF('Card Reader - Website.pdf')">
+      <h3>Automated Card Dispenser</h3>
+      <p>Arduino-controlled motors and sensors.</p>
+    </div>
+
+    <div class="project-card" onclick="openPDF('Fish_Website.pdf')">
+      <h3>Plasma-Cut Fish Sign</h3>
+      <p>CNC plasma cutting and finishing.</p>
+    </div>
+
+    <div class="project-card" onclick="openPDF('Drag Analysis - Website.pdf')">
+      <h3>Drag Flow Analysis</h3>
+      <p>Numerical fluid dynamics analysis in MATLAB.</p>
+    </div>
 
   </div>
 </section>
@@ -222,21 +254,21 @@
 
 <script>
   function showHome() {
-    document.getElementById("home").style.display = "grid";
-    document.getElementById("projects").style.display = "none";
-    document.getElementById("viewer").style.display = "none";
+    home.style.display = "grid";
+    projects.style.display = "none";
+    viewer.style.display = "none";
   }
 
   function showProjects() {
-    document.getElementById("home").style.display = "none";
-    document.getElementById("projects").style.display = "block";
-    document.getElementById("viewer").style.display = "none";
+    home.style.display = "none";
+    projects.style.display = "block";
+    viewer.style.display = "none";
   }
 
   function openPDF(src) {
-    document.getElementById("projects").style.display = "none";
-    document.getElementById("viewer").style.display = "block";
-    document.getElementById("pdfFrame").src = src;
+    projects.style.display = "none";
+    viewer.style.display = "block";
+    pdfFrame.src = src;
   }
 </script>
 
