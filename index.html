@@ -47,34 +47,47 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: calc(100vh - 64px);
-      background-image: url("white-technology-background_23-2148390327.avif");
+      background-color: #f8f9fa;
+    }
+
+    /* IMAGE SIDE */
+    .home-image {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url("snake-river-credit-scott-bosse-header.jpg");
       background-size: cover;
       background-position: center;
     }
 
-    .home-image {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(2px);
+    /* Dark overlay */
+    .home-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.28);
     }
 
     .home-image img {
-      width: 55%;
+      width: 28%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      border-radius: 6px;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.45);
       background-color: white;
-      padding: 6px;
+      position: relative;
+      z-index: 1;
     }
 
+    /* TEXT SIDE */
     .home-text {
       padding: 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background-color: rgba(255,255,255,0.92);
+      background-color: rgba(255,255,255,0.95);
     }
 
     .home-text h1 {
@@ -184,6 +197,7 @@
       box-shadow: 0 5px 20px rgba(0,0,0,0.25);
     }
 
+    /* ---------- MOBILE ---------- */
     @media (max-width: 900px) {
       .home {
         grid-template-columns: 1fr;
@@ -194,7 +208,7 @@
       }
 
       .home-image img {
-        width: 65%;
+        width: 40%;
       }
     }
   </style>
@@ -218,9 +232,11 @@
     <h2>Engineering Portfolio</h2>
 
     <p>
-      Hi, thanks for checking out my webpage. Ever since I was a kid I have been interested
-      in learning how things work. I am a Mechanical Engineering student at BYU-Idaho, and I
-      enjoy sports, fly fishing, CAD design, prototyping, and solving real world engineering problems.
+    Thanks for checking out my webpage! My interest in engineering started at a 
+    young age from a curiosity about how everyday things work and how they’re built.
+    Today, I’m a Mechanical Engineering student at BYU–Idaho who enjoys CAD design,
+    prototyping, and solving real-world problems through hands-on engineering. 
+    Outside the school, I enjoy fly fishing, sports, and projects that let me keep learning and building.
     </p>
 
     <div class="cta">
@@ -229,8 +245,11 @@
 
     <div class="contact">
       <p>Email: <a href="mailto:kylejacksonm@gmail.com">kylejacksonm@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/kyle-jackson-001/" target="_blank">
-        linkedin.com/in/kyle-jackson-001</a></p>
+      <p>LinkedIn:
+        <a href="https://www.linkedin.com/in/kyle-jackson-001/" target="_blank">
+          linkedin.com/in/kyle-jackson-001
+        </a>
+      </p>
     </div>
   </div>
 </section>
@@ -318,6 +337,11 @@
 </section>
 
 <script>
+  const home = document.getElementById("home");
+  const projects = document.getElementById("projects");
+  const viewer = document.getElementById("viewer");
+  const pdfFrame = document.getElementById("pdfFrame");
+
   function showHome() {
     home.style.display = "grid";
     projects.style.display = "none";
