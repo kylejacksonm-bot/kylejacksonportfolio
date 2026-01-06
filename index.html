@@ -53,25 +53,27 @@
     /* IMAGE SIDE */
 .home-image {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-image: url("Teton-Valley-2.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .home-image img {
-  width: 260px;              /* CONTROLLED size */
-  height: 260px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  height: 140px;              /* MATCHES name block */
+  width: 140px;
+
   object-fit: cover;
-  border-radius: 6px;        /* square */
+  border-radius: 6px;
   border: 5px solid white;
   box-shadow: 0 12px 35px rgba(0,0,0,0.45);
   background-color: white;
-  position: relative;
-  z-index: 1;
 }
+
 
 
     /* TEXT SIDE */
