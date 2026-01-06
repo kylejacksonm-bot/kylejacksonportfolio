@@ -51,35 +51,30 @@
     }
 
     /* IMAGE SIDE */
-    .home-image {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: url("snake-river-credit-scott-bosse-header.jpg");
-      background-size: cover;
-      background-position: center;
+.home-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("Teton-Valley-2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
     }
 
-    /* Dark overlay */
-    .home-image::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.28);
-    }
+.home-image img {
+  width: 28%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;        /* square with subtle rounding */
+  border: 5px solid white;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+  background-color: white;
+  position: relative;
+  z-index: 1;
+}
 
-    .home-image img {
-      width: 28%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid white;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.45);
-      background-color: white;
-      position: relative;
-      z-index: 1;
-    }
 
     /* TEXT SIDE */
     .home-text {
