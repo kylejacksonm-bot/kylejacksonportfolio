@@ -10,6 +10,7 @@
       --dark: #1a1a1a;
       --text: #212529;
       --muted: #6c757d;
+      --light: #f8f9fa;
       --pad: 3rem;
     }
 
@@ -25,12 +26,14 @@
       color: var(--text);
     }
 
-    /* ---------- NAV ---------- */
+    /* ---------- NAVIGATION ---------- */
     nav {
+      min-height: 64px;
       background-color: var(--dark);
       padding: 1rem 2rem;
       display: flex;
       justify-content: flex-end;
+      align-items: center;
       gap: 2rem;
     }
 
@@ -38,9 +41,14 @@
       background: none;
       border: none;
       color: white;
+      font-family: inherit;
       font-size: 1rem;
       font-weight: 700;
       cursor: pointer;
+    }
+
+    nav button:hover {
+      color: #c9c9c9;
     }
 
     /* ---------- HOME ---------- */
@@ -48,7 +56,7 @@
       display: grid;
       grid-template-columns: 1.2fr 2fr;
       min-height: calc(100vh - 64px);
-      background-color: #f8f9fa;
+      background-color: var(--light);
     }
 
     .home-photo {
@@ -59,13 +67,13 @@
     }
 
     .profile-pic {
-      width: 260px;
-      height: 260px;
+      width: 400px;
+      height: 400px;
       object-fit: cover;
       border-radius: 6px;
       border: 4px solid #111;
       outline: 6px solid #6c757d;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
       background-color: white;
     }
 
@@ -74,7 +82,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background-color: rgba(255,255,255,0.95);
+      background-color: rgba(255, 255, 255, 0.95);
     }
 
     .home-text h1 {
@@ -84,32 +92,50 @@
     }
 
     .home-text h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
       margin-top: 0.5rem;
       color: var(--muted);
+      font-size: 1.6rem;
+      font-weight: 700;
     }
 
-    .home-text p {
+    .home-text > p {
+      max-width: 600px;
       margin-top: 1.5rem;
       font-size: 1.1rem;
       line-height: 1.7;
-      max-width: 560px;
     }
 
     .cta {
       margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .cta button {
       padding: 12px 26px;
-      font-size: 1rem;
-      font-weight: 700;
       border: none;
+      border-radius: 4px;
       background-color: var(--dark);
       color: white;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
       cursor: pointer;
-      border-radius: 4px;
+    }
+
+    .cta button:hover {
+      background-color: #404040;
+    }
+
+    .cta .secondary-button {
+      border: 2px solid var(--dark);
+      background-color: white;
+      color: var(--dark);
+    }
+
+    .cta .secondary-button:hover {
+      background-color: #ececec;
     }
 
     .contact {
@@ -117,19 +143,47 @@
       font-weight: 700;
     }
 
+    .contact p {
+      margin-top: 0.4rem;
+    }
+
     .contact a {
       color: inherit;
       text-decoration: none;
     }
 
-    /* ---------- PROJECTS ---------- */
-    .projects {
-      display: none;
-      padding: 3rem;
-      max-width: 1300px;
-      margin: auto;
+    .contact a:hover {
+      text-decoration: underline;
     }
 
+    /* ---------- SHARED SECTION STYLES ---------- */
+    .projects,
+    .products {
+      display: none;
+      max-width: 1300px;
+      margin: auto;
+      padding: 3rem;
+    }
+
+    .section-heading {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: 2.4rem;
+      font-weight: 900;
+    }
+
+    .section-heading p {
+      max-width: 700px;
+      margin: 0.75rem auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    /* ---------- PROJECTS ---------- */
     .project-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -137,16 +191,19 @@
     }
 
     .project-card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      cursor: pointer;
       overflow: hidden;
-      transition: transform 0.2s;
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
     }
 
     .project-card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 9px 22px rgba(0, 0, 0, 0.15);
     }
 
     .project-preview iframe {
@@ -167,8 +224,73 @@
 
     .project-info p {
       margin-top: 0.4rem;
-      font-size: 0.95rem;
       color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* ---------- PRODUCTS ---------- */
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      min-height: 280px;
+      padding: 2rem;
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 9px 22px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-card h3 {
+      margin-top: 0.75rem;
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    .product-card p {
+      margin-top: 0.75rem;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .amazon-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 12px 20px;
+      border-radius: 4px;
+      background-color: var(--dark);
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .amazon-link:hover {
+      background-color: #404040;
     }
 
     /* ---------- PDF VIEWER ---------- */
@@ -181,18 +303,78 @@
       width: 100%;
       height: 90vh;
       border: none;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
     }
 
     /* ---------- MOBILE ---------- */
     @media (max-width: 900px) {
+      :root {
+        --pad: 2rem;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 1.25rem;
+      }
+
       .home {
         grid-template-columns: 1fr;
       }
 
+      .home-photo {
+        padding-bottom: 1rem;
+      }
+
       .profile-pic {
-        width: 220px;
-        height: 220px;
+        width: 400px;
+        height: 400px;
+      }
+
+      .home-text {
+        text-align: center;
+      }
+
+      .home-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .home-text > p {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .cta {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+      }
+
+      nav button {
+        font-size: 0.95rem;
+      }
+
+      .projects,
+      .products {
+        padding: 2rem 1rem;
+      }
+
+      .project-list,
+      .product-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading h2 {
+        font-size: 2rem;
+      }
+
+      .viewer {
+        padding: 1rem;
       }
     }
   </style>
@@ -200,173 +382,369 @@
 
 <body>
 
-<nav>
-  <button onclick="showHome()">Home</button>
-  <button onclick="showProjects()">Projects</button>
-</nav>
+  <!-- NAVIGATION -->
+  <nav>
+    <button type="button" onclick="showHome()">Home</button>
+    <button type="button" onclick="showProjects()">Projects</button>
+    <button type="button" onclick="showProducts()">Jackson Design Products</button>
+  </nav>
 
-<!-- HOME -->
-<section class="home" id="home">
-  <div class="home-photo">
-    <img src="Website Profile Pic Mountains.jpg" alt="Kyle Jackson" class="profile-pic">
-  </div>
-
-  <div class="home-text">
-    <h1>Kyle Jackson</h1>
-    <h2>Engineering Portfolio</h2>
-
-  <p>
-    Thanks for checking out my portfolio! My interest in engineering began with a curiosity
-    about how everyday products work and how they can be improved. Today, I’m a Mechanical
-    Engineering student at BYU–Idaho who enjoys CAD design, prototyping, manufacturing, and
-    solving real-world problems through hands-on engineering. Outside of school, I enjoy fly
-    fishing, sports, and building Jackson Design LLC, my small design and manufacturing
-    business where I develop practical products from initial concepts through functional
-    prototypes.
-  </p>
-
-    <div class="cta">
-      <button onclick="showProjects()">Check out my projects</button>
+  <!-- HOME -->
+  <section class="home" id="home">
+    <div class="home-photo">
+      <img
+        src="Website Profile Pic Mountains.jpg"
+        alt="Kyle Jackson"
+        class="profile-pic"
+      >
     </div>
 
-    <div class="contact">
-      <p>Email: <a href="mailto:kylejacksonm@gmail.com">kylejacksonm@gmail.com</a></p>
-      <p>LinkedIn:
-        <a href="https://www.linkedin.com/in/kyle-jackson-001" target="_blank">
-          linkedin.com/in/kyle-jackson-001
-        </a>
+    <div class="home-text">
+      <h1>Kyle Jackson</h1>
+      <h2>Engineering Portfolio</h2>
+
+      <p>
+        Thanks for checking out my portfolio! My interest in engineering began
+        with a curiosity about how everyday products work and how they can be
+        improved. Today, I’m a Mechanical Engineering student at BYU–Idaho who
+        enjoys CAD design, prototyping, manufacturing, and solving real-world
+        problems through hands-on engineering. Outside of school, I enjoy fly
+        fishing, sports, and building Jackson Design LLC, my small design and
+        manufacturing business where I develop practical products from initial
+        concepts through functional prototypes.
+      </p>
+
+      <div class="cta">
+        <button type="button" onclick="showProjects()">
+          Check Out My Projects
+        </button>
+
+        <button
+          type="button"
+          class="secondary-button"
+          onclick="showProducts()"
+        >
+          See My Products
+        </button>
+      </div>
+
+      <div class="contact">
+        <p>
+          Email:
+          <a href="mailto:kylejacksonm@gmail.com">
+            kylejacksonm@gmail.com
+          </a>
+        </p>
+
+        <p>
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/kyle-jackson-001"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin.com/in/kyle-jackson-001
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="section-heading">
+      <h2>Engineering Projects</h2>
+      <p>
+        A collection of engineering, design, analysis, manufacturing, and
+        programming projects.
       </p>
     </div>
-  </div>
-</section>
 
-<!-- PROJECTS -->
-<section class="projects" id="projects">
-  <div class="project-list">
+    <div class="project-list">
 
+      <div
+        class="project-card"
+        onclick="openPDF('Closet Rack FEA.pdf')"
+      >
+        <div class="project-preview">
+          <iframe
+            src="Closet Rack FEA.pdf#page=1"
+            title="Closet Rack FEA preview"
+          ></iframe>
+        </div>
 
-    <div class="project-card" onclick="openPDF('Closet Rack FEA.pdf')">
-      <div class="project-preview">
-        <iframe src="Closet Rack FEA.pdf#page=1"></iframe>
+        <div class="project-info">
+          <h3>Closet Rack FEA Analysis</h3>
+          <p>
+            Finite Element Analysis of a loaded closet rack system with hand
+            calculations and validation.
+          </p>
+        </div>
       </div>
-      <div class="project-info">
-        <h3>Closet Rack FEA Analysis</h3>
-        <p>Finite Element Analysis of a loaded closet rack system with hand calculations and validation.</p>
+
+      <div
+        class="project-card"
+        onclick="openPDF('Jar opener_Website.pdf')"
+      >
+        <div class="project-preview">
+          <iframe
+            src="Jar opener_Website.pdf#page=1"
+            title="Jar Opener preview"
+          ></iframe>
+        </div>
+
+        <div class="project-info">
+          <h3>Jar Opener</h3>
+          <p>
+            High-friction silicone jar opener designed and validated through
+            torque and friction testing.
+          </p>
+        </div>
       </div>
+
+      <div
+        class="project-card"
+        onclick="openPDF('FlightSimulator_PDF.pdf')"
+      >
+        <div class="project-preview">
+          <iframe
+            src="FlightSimulator_PDF.pdf#page=1"
+            title="MATLAB Flight Simulator preview"
+          ></iframe>
+        </div>
+
+        <div class="project-info">
+          <h3>MATLAB Flight Simulator</h3>
+          <p>
+            Real-time 6 DOF aircraft simulation with Arduino joystick control.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="project-card"
+        onclick="openPDF('Planetary Gear System - Website.pdf')"
+      >
+        <div class="project-preview">
+          <iframe
+            src="Planetary Gear System - Website.pdf#page=1"
+            title="Planetary Gear System preview"
+          ></iframe>
+        </div>
+
+        <div class="project-info">
+          <h3>Planetary Gear System</h3>
+          <p>CNC-machined functional planetary geartrain.</p>
+        </div>
+      </div>
+
+      <div
+        class="project-card"
+        onclick="openPDF('Work Shelf - Website.pdf')"
+      >
+        <div class="project-preview">
+          <iframe
+            src="Work Shelf - Website.pdf#page=1"
+            title="Garage Tool Organizer Shelf preview"
+          ></iframe>
+        </div>
+
+        <div class="project-info">
+          <h3>Garage Tool Organizer Shelf</h3>
+          <p>Laser-cut acrylic storage system.</p>
+        </div>
+      </div>
+
+      <div
+        class="project-card"
+        onclick="openPDF('Plant Stand - Website.pdf')"
+      >
+        <div class="project-preview">
+          <iframe
+            src="Plant Stand - Website.pdf#page=1"
+            title="Laser Cut Plant Stand preview"
+          ></iframe>
+        </div>
+
+        <div class="project-info">
+          <h3>Laser Cut Plant Stand</h3>
+          <p>Interlocking acrylic structure.</p>
+        </div>
+      </div>
+
+      <div
+        class="project-card"
+        onclick="openPDF('Card Reader - Website.pdf')"
+      >
+        <div class="project-preview">
+          <iframe
+            src="Card Reader - Website.pdf#page=1"
+            title="Automated Card Dispenser preview"
+          ></iframe>
+        </div>
+
+        <div class="project-info">
+          <h3>Automated Card Dispenser</h3>
+          <p>Arduino-controlled motors and sensors.</p>
+        </div>
+      </div>
+
+      <div
+        class="project-card"
+        onclick="openPDF('Fish_Website.pdf')"
+      >
+        <div class="project-preview">
+          <iframe
+            src="Fish_Website.pdf#page=1"
+            title="Plasma Cut Fish Sign preview"
+          ></iframe>
+        </div>
+
+        <div class="project-info">
+          <h3>Plasma Cut Fish Sign</h3>
+          <p>CNC plasma cutting and finishing.</p>
+        </div>
+      </div>
+
+      <div
+        class="project-card"
+        onclick="openPDF('Drag Analysis - Website.pdf')"
+      >
+        <div class="project-preview">
+          <iframe
+            src="Drag Analysis - Website.pdf#page=1"
+            title="Drag Flow Analysis preview"
+          ></iframe>
+        </div>
+
+        <div class="project-info">
+          <h3>Drag Flow Analysis</h3>
+          <p>Numerical fluid dynamics analysis in MATLAB.</p>
+        </div>
+      </div>
+
     </div>
-    
-    <!-- Jar Opener -->
-    <div class="project-card" onclick="openPDF('Jar opener_Website.pdf')">
-      <div class="project-preview">
-        <iframe src="Jar opener_Website.pdf#page=1"></iframe>
-      </div>
-      <div class="project-info">
-        <h3>Jar Opener</h3>
-        <p>High-friction silicone jar opener designed and validated through torque and friction testing.</p>
-      </div>
+  </section>
+
+  <!-- JACKSON DESIGN PRODUCTS -->
+  <section class="products" id="products">
+    <div class="section-heading">
+      <h2>See My Products from Jackson Design LLC</h2>
+      <p>
+        Explore practical products I have designed, prototyped, manufactured,
+        and brought to market through Jackson Design LLC.
+      </p>
     </div>
 
-    <div class="project-card" onclick="openPDF('FlightSimulator_PDF.pdf')">
-      <div class="project-preview">
-        <iframe src="FlightSimulator_PDF.pdf#page=1"></iframe>
-      </div>
-      <div class="project-info">
-        <h3>MATLAB Flight Simulator</h3>
-        <p>Real-time 6 DOF aircraft simulation with Arduino joystick control.</p>
-      </div>
+    <div class="product-list">
+
+      <article class="product-card">
+        <span class="product-label">Jackson Design LLC</span>
+
+        <h3>PG9303 Sensor Covers</h3>
+
+        <p>
+          Black contact sensor and magnet covers designed for compatibility
+          with PG9303 door and window sensors.
+        </p>
+
+        <a
+          class="amazon-link"
+          href="https://www.amazon.com/dp/B0HGHNP6TH"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on Amazon
+        </a>
+      </article>
+
+      <article class="product-card">
+        <span class="product-label">Jackson Design LLC</span>
+
+        <h3>SIXMINICT3A Sensor Covers</h3>
+
+        <p>
+          Black contact sensor and magnet covers designed for compatibility
+          with SIXMINICT3A door and window sensors.
+        </p>
+
+        <a
+          class="amazon-link"
+          href="https://www.amazon.com/dp/B0HGCB4SZZ"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on Amazon
+        </a>
+      </article>
+
+      <article class="product-card">
+        <span class="product-label">Jackson Design LLC</span>
+
+        <h3>SIXCTA Sensor Covers</h3>
+
+        <p>
+          Black contact sensor and magnet covers designed for compatibility
+          with SIXCTA door and window sensors.
+        </p>
+
+        <a
+          class="amazon-link"
+          href="https://www.amazon.com/dp/B0HGHVB5HQ"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on Amazon
+        </a>
+      </article>
+
     </div>
+  </section>
 
-    <div class="project-card" onclick="openPDF('Planetary Gear System - Website.pdf')">
-      <div class="project-preview">
-        <iframe src="Planetary Gear System - Website.pdf#page=1"></iframe>
-      </div>
-      <div class="project-info">
-        <h3>Planetary Gear System</h3>
-        <p>CNC machined functional planetary geartrain.</p>
-      </div>
-    </div>
+  <!-- PDF VIEWER -->
+  <section class="viewer" id="viewer">
+    <iframe id="pdfFrame" title="Project PDF viewer"></iframe>
+  </section>
 
-    <div class="project-card" onclick="openPDF('Work Shelf - Website.pdf')">
-      <div class="project-preview">
-        <iframe src="Work Shelf - Website.pdf#page=1"></iframe>
-      </div>
-      <div class="project-info">
-        <h3>Garage Tool Organizer Shelf</h3>
-        <p>Laser cut acrylic storage system.</p>
-      </div>
-    </div>
+  <script>
+    const home = document.getElementById("home");
+    const projects = document.getElementById("projects");
+    const products = document.getElementById("products");
+    const viewer = document.getElementById("viewer");
+    const pdfFrame = document.getElementById("pdfFrame");
 
-    <div class="project-card" onclick="openPDF('Plant Stand - Website.pdf')">
-      <div class="project-preview">
-        <iframe src="Plant Stand - Website.pdf#page=1"></iframe>
-      </div>
-      <div class="project-info">
-        <h3>Laser Cut Plant Stand</h3>
-        <p>Interlocking acrylic structure.</p>
-      </div>
-    </div>
+    function hideAllSections() {
+      home.style.display = "none";
+      projects.style.display = "none";
+      products.style.display = "none";
+      viewer.style.display = "none";
+    }
 
-    <div class="project-card" onclick="openPDF('Card Reader - Website.pdf')">
-      <div class="project-preview">
-        <iframe src="Card Reader - Website.pdf#page=1"></iframe>
-      </div>
-      <div class="project-info">
-        <h3>Automated Card Dispenser</h3>
-        <p>Arduino controlled motors and sensors.</p>
-      </div>
-    </div>
+    function showHome() {
+      hideAllSections();
+      home.style.display = "grid";
+      window.scrollTo(0, 0);
+    }
 
-    <div class="project-card" onclick="openPDF('Fish_Website.pdf')">
-      <div class="project-preview">
-        <iframe src="Fish_Website.pdf#page=1"></iframe>
-      </div>
-      <div class="project-info">
-        <h3>Plasma Cut Fish Sign</h3>
-        <p>CNC plasma cutting and finishing.</p>
-      </div>
-    </div>
+    function showProjects() {
+      hideAllSections();
+      projects.style.display = "block";
+      window.scrollTo(0, 0);
+    }
 
-    <div class="project-card" onclick="openPDF('Drag Analysis - Website.pdf')">
-      <div class="project-preview">
-        <iframe src="Drag Analysis - Website.pdf#page=1"></iframe>
-      </div>
-      <div class="project-info">
-        <h3>Drag Flow Analysis</h3>
-        <p>Numerical fluid dynamics analysis in MATLAB.</p>
-      </div>
-    </div>
+    function showProducts() {
+      hideAllSections();
+      products.style.display = "block";
+      window.scrollTo(0, 0);
+    }
 
-  </div>
-</section>
-
-<section class="viewer" id="viewer">
-  <iframe id="pdfFrame"></iframe>
-</section>
-
-<script>
-  const home = document.getElementById("home");
-  const projects = document.getElementById("projects");
-  const viewer = document.getElementById("viewer");
-  const pdfFrame = document.getElementById("pdfFrame");
-
-  function showHome() {
-    home.style.display = "grid";
-    projects.style.display = "none";
-    viewer.style.display = "none";
-  }
-
-  function showProjects() {
-    home.style.display = "none";
-    projects.style.display = "block";
-    viewer.style.display = "none";
-  }
-
-  function openPDF(src) {
-    projects.style.display = "none";
-    viewer.style.display = "block";
-    pdfFrame.src = src;
-  }
-</script>
+    function openPDF(src) {
+      hideAllSections();
+      viewer.style.display = "block";
+      pdfFrame.src = src;
+      window.scrollTo(0, 0);
+    }
+  </script>
 
 </body>
 </html>
